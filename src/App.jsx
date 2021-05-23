@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { Route } from "react-router";
 import NavBar from "./components/NavBar";
-import Login from "./pages/Login";
 
 //css Import
 import "./styles/app.scss";
@@ -9,7 +8,9 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Login />
+      <Route path="/" exact>
+        <div>Hello</div>
+      </Route>
     </div>
   );
 }
