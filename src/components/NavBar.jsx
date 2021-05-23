@@ -1,7 +1,6 @@
 import React from "react";
 
 //misc
-
 import navBar from "../misc/navBar";
 
 // code ...
