@@ -1,36 +1,30 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 
 // icons
-
 import { search } from "../../misc/icons/navigation";
-import axios from "axios";
 
-// urls
-
-import { SearchURL } from "../../BaseUrl";
+// context
+import { searchContext } from "../../context/SearchContext";
 
 const SearchBox = () => {
-  const searchInput = useRef("");
+  const [searchValue, setSearchValue] = useState("");
+  const { searchFuncs } = useContext(searchContext);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     axios
-  //       .get(`${SearchURL}/wow`)
-  //       .then((data) => {
-  //         console.log(data);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }, 2000);
-  // }, [searchInput]);
+  const [handleSubmit] = searchFuncs;
 
   return (
     <div className="searchBoxContainer">
-      <div id="searchLogo">{search()}</div>
-      <input
-        ref={searchInput}
-        placeholder="Artists, songs, or podcasts"
-        type="text"
-      />
+      <form onSubmit={handleSubmit} className="inputForm">
+        <div id="searchLogo" onClick={handleSubmit}>
+          {search()}{" "}
+        </div>
+        <input
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          placeholder="Artists, songs, or podcasts"
+          type="text"
+        />
+      </form>
     </div>
   );
 };

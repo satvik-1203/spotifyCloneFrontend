@@ -5,6 +5,12 @@
   padding: 0.1rem 0.3rem;
   margin: 0 1rem;
   width: 20rem;
+
+  form {
+    display: flex;
+    justify-content: center;
+  }
+
   input {
     padding: 0.2rem 0.3rem;
     outline: none;
@@ -14,6 +20,7 @@
     background-color: transparent;
   }
   #searchLogo {
+    cursor: pointer;
     svg {
       height: 80%;
       color: white;
