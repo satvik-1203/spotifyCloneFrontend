@@ -1,5 +1,5 @@
 import { Route } from "react-router";
-import NavBar from "./components/NavBar";
+import HomePage from "./pages/HomePage";
 
 //css Import
 import "./styles/app.scss";
@@ -7,9 +7,8 @@ import "./styles/app.scss";
 function App() {
   return (
     <div>
-      <NavBar />
-      <Route path="/" exact>
-        <div>Hello</div>
+      <Route path="/">
+        <HomePage />
       </Route>
     </div>
   );

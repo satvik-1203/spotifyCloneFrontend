@@ -1,17 +1,17 @@
-nav {
+nav.notLogged {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: black;
-  height: 11vh;
-  padding: 0 5rem;
+  height: 10vh;
+  padding: 0 8rem;
 
   #logo {
     cursor: pointer;
     fill: white;
 
     svg {
-      width: 40%;
+      width: 45%;
       height: 100%;
     }
   }
@@ -31,6 +31,12 @@ nav {
         color: inherit;
         text-decoration: none;
         cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+        font-family: Circular, spotify-circular, Helvetica, Arial, sans-serif;
+        &:hover {
+          color: #1ed760;
+        }
       }
     }
   }

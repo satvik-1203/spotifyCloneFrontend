@@ -1,0 +1,55 @@
+.logged {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #201160;
+  padding: 1.3rem 2rem;
+  height: 90%;
+  #logo {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    border-radius: 10000000000px;
+    .imageContainer {
+      width: 20;
+      height: 20;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 28px;
+        height: 28px;
+        object-fit: cover;
+      }
+    }
+    .name {
+      color: white;
+      padding: 0.5em 0rem 0.5rem 0.4rem;
+    }
+  }
+  .caret {
+    padding: 0.4rem;
+    color: white;
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    .leftArrow,
+    .rightArrow {
+      background-color: #130a33;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0.4rem;
+    }
+  }
+}
+
+.arrowButtons {
+  display: flex;
+}

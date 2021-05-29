@@ -1,21 +1,19 @@
 import React from "react";
 
 //misc
-import navBar from "../misc/navBar";
+
+import navigation from "../../misc/navigation";
+
+//react-router
 
 import { Link } from "react-router-dom";
 
-import Login from "./Login";
-// code ...
-
-const NavBar = () => {
-  Login();
-
+const SideBar = () => {
   return (
-    <nav className="notLogged">
+    <div className="sideBarComponent">
       <div id="logo">
         <svg
-          width="10%"
+          width="70%"
           viewBox="0 0 63 20"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMin meet"
@@ -25,17 +23,24 @@ const NavBar = () => {
           </g>
         </svg>
       </div>
-      <div className="navOptions">
-        <ul className="navElements">
-          {navBar().map((element) => (
-            <li key={element.path} className="navElement">
-              <a href={element.path}>{element.name} </a>
-            </li>
-          ))}
-        </ul>
+
+      <section className="navigation">
+        {navigation().map((element) => (
+          <div>
+            <Link to={element.path} className="element">
+              <div className="elementLogo">{element.logo}</div>
+              <div className="elementName">{element.name}</div>
+            </Link>
+          </div>
+        ))}
+      </section>
+      <div className="likeNAddPlayList">
+        <div className="addPlaylist"></div>
+        <div className="linkedSongs"></div>
       </div>
-    </nav>
+      <section className="playlists"></section>
+    </div>
   );
 };
 
-export default NavBar;
+export default SideBar;

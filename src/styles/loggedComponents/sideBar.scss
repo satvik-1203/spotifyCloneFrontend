@@ -1,0 +1,40 @@
+.sideBarComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  #logo {
+    padding-left: 1.4rem;
+  }
+  svg {
+    fill: white;
+  }
+  .navigation {
+    margin-top: 3rem;
+    padding: 0 1rem;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .element {
+      padding: 0.2rem 0;
+      display: flex;
+      margin: 0.2rem 0;
+      align-items: center;
+      color: #b3b3b3;
+      text-decoration: none;
+
+      .elementLogo,
+      .elementName {
+        padding: 0 0.5rem;
+      }
+    }
+  }
+  .navigation {
+    .selected {
+      background-color: #282828;
+      border-radius: 0.4rem;
+      color: white;
+    }
+  }
+}

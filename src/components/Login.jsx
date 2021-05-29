@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { LoginUrl } from "../BaseUrl";
+import { LoginUrl, userInfoUrl } from "../BaseUrl";
 import axios from "axios";
 import _ from "lodash";
 
@@ -7,9 +7,9 @@ import _ from "lodash";
 
 import { useDispatch } from "react-redux";
 import userCredentials from "../redux/action/userCredentials";
+import userInfo from "../redux/action/userInfo";
 
 const code = new URLSearchParams(window.location.search).get("code");
-// we need to call our url, not the call back, and we made no callback url so we can take that out
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,12 @@ const Login = () => {
             _.pick(data.data, ["refreshToken", "tokenAccess", "tokenExpire"])
           )
         );
-        console.log(data);
+        window.history.pushState({}, "", ["/"]);
+        // this get req for getting the data of the user, and will be storing in state
+
+        axios.get(userInfoUrl).then(({ data }) => {
+          dispatch(userInfo(data));
+        });
       })
       .catch(() => {
         window.location = "/";
