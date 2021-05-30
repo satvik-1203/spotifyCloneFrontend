@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 import axios from "axios";
 
 // urls
@@ -10,6 +10,7 @@ export const SearchProvider = ({ children }) => {
 
   const handleSearch = (e, searchValue) => {
     e.preventDefault();
+    if (!searchValue.trim()) return setTracks([]);
     setTimeout(() => {
       axios
         .get(`${SearchURL}/${searchValue}`)

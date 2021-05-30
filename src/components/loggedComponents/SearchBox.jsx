@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 
 // icons
 import { search } from "../../misc/icons/navigation";
@@ -14,10 +14,13 @@ const SearchBox = () => {
 
   return (
     <div className="searchBoxContainer">
-      <form onSubmit={handleSubmit} className="inputForm">
-        <div id="searchLogo" onClick={handleSubmit}>
-          {search()}{" "}
-        </div>
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e, searchValue);
+        }}
+        className="inputForm"
+      >
+        <div id="searchLogo">{search()} </div>
         <input
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
