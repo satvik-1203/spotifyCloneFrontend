@@ -11,7 +11,20 @@ const TopSong = ({ topSong }) => {
             <div className="name">{topSong.name}</div>
             <div className="about">
               {topSong.explicit && <span className="explicit">E</span>}
-              <span className="aboutName">{topSong.artists[0].name}</span>
+              <span className="nameDiv">
+                {topSong.artists.map((artist, index) => (
+                  <>
+                    <span key={artist.name} className="aboutName">
+                      {artist.name}
+                    </span>
+                    {index !== topSong.artists.length - 1 ? (
+                      <span>, </span>
+                    ) : (
+                      ""
+                    )}
+                  </>
+                ))}
+              </span>
             </div>
           </div>
         </div>

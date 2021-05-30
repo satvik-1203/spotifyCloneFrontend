@@ -22,7 +22,7 @@ const navigation = () => {
       name: "Search",
       path: "/search",
       logo: search(),
-      components: SearchBox(),
+      components: <SearchBox />,
     },
     {
       id: 3,
