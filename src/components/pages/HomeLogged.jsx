@@ -10,26 +10,30 @@ import { Switch, Route } from "react-router-dom";
 import Search from "./Search";
 import NavBar from "../loggedComponents/NavBar";
 
+import { SearchProvider } from "../../context/SearchContext";
+
 const HomeLogged = () => {
   return (
-    <div className="homeLog">
-      <div className="sideBar">
-        <SideBar />
-      </div>
-      <Switch>
-        <div className="content">
-          <div className="navBar">
-            <NavBar />
-          </div>
-          <Route path="/" exact>
-            <Hero />
-          </Route>
-          <Route path="/search" exact>
-            <Search />
-          </Route>
+    <SearchProvider>
+      <div className="homeLog">
+        <div className="sideBar">
+          <SideBar />
         </div>
-      </Switch>
-    </div>
+        <Switch>
+          <div className="content">
+            <div className="navBar">
+              <NavBar />
+            </div>
+            <Route path="/" exact>
+              <Hero />
+            </Route>
+            <Route path="/search" exact>
+              <Search />
+            </Route>
+          </div>
+        </Switch>
+      </div>
+    </SearchProvider>
   );
 };
 

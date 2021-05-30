@@ -27,7 +27,7 @@ const NavBar = () => {
       </div>
       <div id="logo">
         <div className="imageContainer">
-          <img src={userData.images[0].url} alt="" />
+          <img src={userData.images[0] ? userData.images[0].url : ""} alt="" />
         </div>
         <div className="name">{userData.display_name}</div>
         <div className="caret">
