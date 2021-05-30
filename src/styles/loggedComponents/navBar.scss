@@ -3,7 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #201160;
+  // background-color: #201160;
+  background-color: #121212;
   padding: 1.3rem 2rem;
   height: 90%;
   #logo {
@@ -38,7 +39,7 @@
     align-items: center;
     .leftArrow,
     .rightArrow {
-      background-color: #130a33;
+      background-color: inherit;
       width: 30px;
       height: 30px;
       border-radius: 50%;

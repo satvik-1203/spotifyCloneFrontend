@@ -9,7 +9,7 @@ const components = () => [
   {
     id: 2,
     name: "search",
-    components: SearchBox(),
+    components: <SearchBox />,
   },
   {
     id: 3,

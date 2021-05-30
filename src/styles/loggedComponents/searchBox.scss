@@ -21,6 +21,8 @@
   }
   #searchLogo {
     cursor: pointer;
+    display: flex;
+    align-items: center;
     svg {
       height: 80%;
       color: white;

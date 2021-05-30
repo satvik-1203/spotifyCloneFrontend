@@ -19,7 +19,7 @@ export const SearchProvider = ({ children }) => {
           setTracks(data.data.body.tracks.items);
         })
         .catch((err) => console.log(err));
-    }, 2000);
+    }, 1000);
   };
 
   return (

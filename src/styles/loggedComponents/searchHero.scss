@@ -1,0 +1,51 @@
+.searchHero {
+  background-color: #121212;
+  color: white;
+  padding: 2rem 4rem;
+
+  height: 100vh;
+  .topResultHeading {
+    font-size: 1.5rem;
+  }
+  .topSearchResultCard {
+    transition: all 0.3s ease-out;
+
+    padding: 1.3rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    width: 30rem;
+    height: 15rem;
+    border-radius: 0.6rem;
+    background-color: #181818;
+    box-shadow: 0 0 5px 0 black;
+    .imgContainer {
+      display: inline;
+      img {
+        width: 6rem;
+        height: 6rem;
+        object-fit: cover;
+        box-shadow: 1px 1px 6px 2px #000000;
+        border-radius: 0.3rem;
+      }
+    }
+    .name {
+      margin: 1rem 0;
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+    .about {
+      .explicit {
+        background-color: grey;
+        color: black;
+        font-size: 0.8rem;
+        padding: 0.1rem 0.2rem;
+        border-radius: 0.1rem;
+        margin-right: 0.8rem;
+      }
+      color: rgb(156, 156, 156);
+    }
+  }
+  .topSearchResultCard:hover {
+    background-color: #282828;
+  }
+}
