@@ -1,10 +1,8 @@
 # Spotify App 
 
 ## Todo
-  - User Authentication
-  - Search feature
-  - save playlists
-  - nice dashboard
+  - State for playing the song
+  - Song player
 
 ### Contributers
   - shah1012
