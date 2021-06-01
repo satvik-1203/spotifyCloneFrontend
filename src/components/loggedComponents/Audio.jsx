@@ -9,11 +9,7 @@ const Audio = () => {
   const [play] = playState;
 
   React.useEffect(() => {
-    if (play) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
+    song && (play ? audioRef.current.play() : audioRef.current.pause());
   }, [play]);
 
   return (
