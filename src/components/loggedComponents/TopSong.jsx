@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import PlayButton from "./PlayButton";
+
+import { AnimatePresence } from "framer-motion";
 
 const TopSong = ({ topSong }) => {
+  const [hover, setHover] = useState(false);
+
   return (
-    <div>
+    <div
+      onClick={(e) => {
+        e.preventDefault();
+      }}
+    >
       <div className="topResult">
         <div className="topResultHeading">Top result</div>
-        <div className="topSearchResultCard">
+        <div
+          className="topSearchResultCard"
+          //
+
+          // Hovering state
+
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+          }}
+        >
+          {hover && <PlayButton topSong={topSong} />}
+
           <div className="imgContainer">
             <img src={topSong.album.images[0].url} alt="" />
             <div className="name">{topSong.name}</div>
@@ -13,16 +36,14 @@ const TopSong = ({ topSong }) => {
               {topSong.explicit && <span className="explicit">E</span>}
               <span className="nameDiv">
                 {topSong.artists.map((artist, index) => (
-                  <>
-                    <span key={artist.name} className="aboutName">
-                      {artist.name}
-                    </span>
+                  <span span key={artist.name}>
+                    <span className="aboutName">{artist.name}</span>
                     {index !== topSong.artists.length - 1 ? (
                       <span>, </span>
                     ) : (
                       ""
                     )}
-                  </>
+                  </span>
                 ))}
               </span>
             </div>

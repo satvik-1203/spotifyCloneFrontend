@@ -22,13 +22,13 @@ export const SearchProvider = ({ children }) => {
     }, 1000);
   };
 
+  const contextValues = {
+    songs: [tracks, setTracks],
+    searchFuncs: [handleSearch],
+  };
+
   return (
-    <searchContext.Provider
-      value={{
-        songs: [tracks, setTracks],
-        searchFuncs: [handleSearch],
-      }}
-    >
+    <searchContext.Provider value={contextValues}>
       {children}
     </searchContext.Provider>
   );

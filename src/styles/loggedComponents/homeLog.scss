@@ -1,15 +1,15 @@
 .homeLog {
   display: flex;
-  justify-content: center;
-
+  justify-content: stretch;
+  align-items: stretch;
   .sideBar {
-    width: 16vw;
+    width: 16rem;
     padding: 1.7rem 0;
     background-color: #000000;
     height: 100vh;
   }
   .content {
-    width: 84vw;
+    width: 100%;
     height: 100vh;
     overflow-y: scroll;
   }

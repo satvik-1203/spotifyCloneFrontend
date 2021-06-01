@@ -26,7 +26,7 @@ const SideBar = () => {
 
       <section className="navigation">
         {navigation().map((element) => (
-          <div>
+          <div key={element.id}>
             <Link to={element.path} className="element">
               <div className="elementLogo">{element.logo}</div>
               <div className="elementName">{element.name}</div>
