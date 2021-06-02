@@ -1,6 +1,8 @@
 import React from "react";
+import SpotifyPlayer from "react-spotify-web-playback";
 
 import { CurrentSongContext } from "../../context/CurrentSong";
+import { useSelector } from "react-redux";
 
 const Audio = () => {
   const { songState, playState } = React.useContext(CurrentSongContext);
@@ -8,20 +10,30 @@ const Audio = () => {
   const audioRef = React.useRef(null);
   const [play] = playState;
 
-  React.useEffect(() => {
-    song && (play ? audioRef.current.play() : audioRef.current.pause());
-  }, [play]);
+  const tokens = useSelector((state) => state.userCredentials);
+
+  // React.useEffect(() => {
+  //   song && (play ? audioRef.current.play() : audioRef.current.pause());
+  // }, [play]);
 
   return (
-    <div>
+    <div className="songPlayer">
       {song && (
-        <audio
-          ref={audioRef}
-          src={
-            /*song.external_urls.spotify*/
-            "https://mp3.chillhop.com/serve.php/?mp3=10075"
-          }
-        ></audio>
+        <SpotifyPlayer
+          styles={{
+            height: "5rem",
+            activeColor: "#fff",
+            bgColor: "#181818",
+            color: "#fff",
+            loaderColor: "#fff",
+            sliderColor: "#1cb954",
+            trackArtistColor: "#ccc",
+            trackNameColor: "#fff",
+          }}
+          play={play}
+          token={tokens.tokenAccess}
+          uris={song.uri}
+        />
       )}
       {song && console.log("Song Loaded")}
     </div>
