@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 const Audio = () => {
   const { songState, playState } = React.useContext(CurrentSongContext);
   const [song] = songState;
-  const audioRef = React.useRef(null);
   const [play] = playState;
 
   const tokens = useSelector((state) => state.userCredentials);
@@ -35,7 +34,6 @@ const Audio = () => {
           uris={song.uri}
         />
       )}
-      {song && console.log("Song Loaded")}
     </div>
   );
 };

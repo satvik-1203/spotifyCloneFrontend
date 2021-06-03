@@ -35,7 +35,7 @@ const HomeLogged = () => {
               </Route>
             </div>
           </Switch>
-          <Audio />
+          {<Audio /> || ""}
         </div>
       </SearchProvider>
     </CurrentSong>

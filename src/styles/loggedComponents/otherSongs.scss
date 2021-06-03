@@ -1,15 +1,14 @@
 .otherSongs {
+  width: calc(100vw - (64px * 2) - 3rem - 480px - 210px);
   .otherSongsTitle {
     font-size: 1.5rem;
   }
-
   .otherSongsWrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 1.3rem;
+    margin-top: 2rem;
 
-    width: 40rem;
     height: 100%;
 
     .otherSongCard {

@@ -7,8 +7,10 @@ const SearchBody = (props) => {
 
   return (
     <div className="searchBody">
-      <TopSong topSong={tracks[0]} />
-      <OtherSongs songs={[].concat.apply([], tracks).splice(16, 4)} />
+      <div className="songContainerFlex">
+        <TopSong topSong={tracks[0]} />
+        <OtherSongs songs={tracks.slice(0, Math.min(4, tracks.length))} />
+      </div>
     </div>
   );
 };

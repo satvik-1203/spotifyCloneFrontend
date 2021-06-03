@@ -1,4 +1,16 @@
 .searchBody {
-  display: flex;
-  justify-content: space-between;
+  .songContainerFlex {
+    display: flex;
+    @media (max-width: 1500px) {
+      flex-direction: column;
+    }
+    .otherSongs {
+      margin-left: 3rem;
+      @media (max-width: 1500px) {
+        margin-top: 5rem;
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  }
 }
