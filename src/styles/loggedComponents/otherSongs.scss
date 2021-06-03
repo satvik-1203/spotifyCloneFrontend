@@ -1,0 +1,55 @@
+.otherSongs {
+  .otherSongsTitle {
+    font-size: 1.5rem;
+  }
+
+  .otherSongsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1.3rem;
+
+    width: 40rem;
+    height: 100%;
+
+    .otherSongCard {
+      display: flex;
+      width: 100%;
+      background-color: #121212;
+      margin-bottom: 1rem;
+
+      .imageContainer {
+        display: flex;
+        position: relative;
+        width: 100%;
+
+        img {
+          width: 2.5rem;
+          height: 2.5rem;
+          object-fit: cover;
+        }
+
+        .nameWrapper {
+          margin-left: 1rem;
+          display: flex;
+          flex-direction: column;
+
+          .name {
+            font-size: 1rem;
+          }
+
+          .about {
+            span {
+              font-size: 0.75rem;
+            }
+          }
+        }
+
+        .timestamp {
+          position: absolute;
+          right: 0px;
+        }
+      }
+    }
+  }
+}
