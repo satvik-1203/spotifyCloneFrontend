@@ -1,0 +1,25 @@
+.popModel {
+  position: absolute;
+  background-color: #121212;
+  border-radius: 4px;
+  max-height: calc(100vh - 24px);
+  max-width: 350px;
+  min-width: 160px;
+  overflow-y: auto;
+  padding: 4px;
+  transform: translate(73vw, 0px);
+
+  ul {
+    list-style: none;
+
+    li {
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: #282828;
+    }
+  }
+}

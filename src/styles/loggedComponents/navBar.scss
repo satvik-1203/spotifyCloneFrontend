@@ -8,6 +8,7 @@
   padding: 1.3rem 2rem;
   height: 90%;
   #logo {
+    user-select: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
