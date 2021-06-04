@@ -12,10 +12,14 @@
     height: 100%;
 
     .otherSongCard {
+      transition: all 0.3s ease-out;
+      cursor: pointer;
       display: flex;
       width: 100%;
       background-color: #121212;
       margin-bottom: 1rem;
+
+      padding: 0.3rem 0;
 
       .imageContainer {
         display: flex;
@@ -49,6 +53,10 @@
           right: 0px;
         }
       }
+    }
+
+    .otherSongCard:hover {
+      background-color: #282828;
     }
   }
 }
