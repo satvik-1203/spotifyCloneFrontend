@@ -7,8 +7,7 @@ import { useSelector } from "react-redux";
 const Audio = () => {
   const { songState, playState } = React.useContext(CurrentSongContext);
   const [song] = songState;
-  const [play] = playState;
-
+  const [play, setPlay] = playState;
   const tokens = useSelector((state) => state.userCredentials);
 
   // React.useEffect(() => {
@@ -29,7 +28,9 @@ const Audio = () => {
             trackArtistColor: "#ccc",
             trackNameColor: "#fff",
           }}
+          autoPlay="false"
           play={play}
+          callback={(state) => setPlay(state.isPlaying)}
           token={tokens.tokenAccess}
           uris={song.uri}
         />

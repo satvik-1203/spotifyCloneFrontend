@@ -19,10 +19,13 @@ const PlayButton = ({ topSong }) => {
   return (
     <div
       onClick={() => {
-        setPlay(!play);
         if (song !== topSong) {
           setSong(topSong);
+          setPlay(true);
+          return;
         }
+        console.log(song);
+        setPlay(!play);
       }}
       className="playButton"
     >
@@ -32,11 +35,19 @@ const PlayButton = ({ topSong }) => {
         animate="animate"
         className="buttonContainer"
       >
-        <div className="play">{play ? resume() : pause()}</div>
+        <div className="play">
+          {play && song.id == topSong.id
+            ? play
+              ? resume()
+              : pause()
+            : pause()}
+        </div>
       </motion.div>
     </div>
   );
 };
+
+// play ? resume() : pause()
 
 const animation = {
   initial: {

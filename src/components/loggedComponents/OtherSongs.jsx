@@ -14,7 +14,7 @@ const OtherSongs = ({ songs }) => {
       <div className="otherSongs">
         <div className="otherSongsTitle">Songs</div>
         <div className="otherSongsWrapper">
-          {songs.map((song, index) => (
+          {songs.map((song) => (
             <div className="otherSongCard">
               <div className="imageContainer">
                 <img src={song.album.images[0].url} alt="" />
