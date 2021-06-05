@@ -30,7 +30,7 @@ const Audio = () => {
           }}
           autoPlay="false"
           play={play}
-          callback={(state) => setPlay(state.isPlaying)}
+          callback={({ isPlaying }) => setPlay(isPlaying)}
           token={tokens.tokenAccess}
           uris={song.uri}
         />

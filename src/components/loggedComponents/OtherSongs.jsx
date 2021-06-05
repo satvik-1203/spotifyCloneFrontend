@@ -9,15 +9,29 @@ const OtherSongs = ({ songs }) => {
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   };
 
+  const [hoverState, setHoverState] = React.useState(false);
+
   return (
     <div onClick={(e) => e.preventDefault()}>
       <div className="otherSongs">
         <div className="otherSongsTitle">Songs</div>
         <div className="otherSongsWrapper">
           {songs.map((song) => (
-            <div className="otherSongCard">
-              <div className="imageContainer">
-                <img src={song.album.images[0].url} alt="" />
+            <div
+              onMouseEnter={() => {
+                setHoverState(true);
+              }}
+              onMouseLeave={() => {
+                setHoverState(false);
+              }}
+              className="otherSongCard"
+            >
+              <div className={`imageContainer`}>
+                <div className="imgContainer">
+                  {hoverState && "onHover"}`
+                  <img src={song.album.images[0].url} alt="" />
+                </div>
+                {}
                 <div className="nameWrapper">
                   <div className="name">{song.name}</div>
                   <div className="about">
@@ -26,7 +40,6 @@ const OtherSongs = ({ songs }) => {
                     ))}
                   </div>
                 </div>
-
                 <div className="timestamp">{msTominutes(song.duration_ms)}</div>
               </div>
             </div>
