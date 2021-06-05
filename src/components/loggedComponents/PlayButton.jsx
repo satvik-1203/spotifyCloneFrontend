@@ -24,7 +24,6 @@ const PlayButton = ({ topSong }) => {
           setPlay(true);
           return;
         }
-        console.log(song);
         setPlay(!play);
       }}
       className="playButton"

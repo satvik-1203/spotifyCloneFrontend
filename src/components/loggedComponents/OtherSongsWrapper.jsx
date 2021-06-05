@@ -19,41 +19,47 @@ const OtherSongsWrapper = ({ song }) => {
 
   const [hoverState, setHoverState] = React.useState(false);
   return (
-    <div>
-      <div>
-        <div
-          onMouseEnter={() => {
-            setHoverState(true);
-          }}
-          onMouseLeave={() => {
-            setHoverState(false);
-          }}
-          className="otherSongCard"
-        >
-          <div className="imageContainer">
-            <div className="imgContainer">
-              <img src={song.album.images[0].url} alt="" />
-              {currentSong && currentSong.id === song.id ? (
-                play ? (
-                  <div className="state">{smallResume()}</div>
-                ) : (
-                  <div className="state">{smallPlay()}</div>
-                )
-              ) : (
-                hoverState && <div className="state">{smallPlay()}</div>
-              )}
-            </div>
+    <div
+      onMouseEnter={() => {
+        setHoverState(true);
+      }}
+      onMouseLeave={() => {
+        setHoverState(false);
+      }}
+      className="otherSongCard"
+      onClick={(e) => {
+        if (song !== currentSong) {
+          setCurrentSong(song);
+          setPlay(true);
+          return;
+        }
+        setPlay(!play);
+      }}
+    >
+      <div className="imageContainer">
+        <div className="imgContainer">
+          <img src={song.album.images[0].url} alt="" />
+          {currentSong && currentSong.id === song.id ? (
+            play ? (
+              <div className="state">{smallResume()}</div>
+            ) : (
+              <div className="state">{smallPlay()}</div>
+            )
+          ) : (
+            hoverState && <div className="state">{smallPlay()}</div>
+          )}
+        </div>
 
-            <div className="nameWrapper">
-              <div className="name">{song.name}</div>
-              <div className="about">
-                {song.artists.map((artist) => (
-                  <span key={artist.name}>{artist.name} </span>
-                ))}
-              </div>
-            </div>
-            <div className="timestamp">{msTominutes(song.duration_ms)}</div>
+        <div className="nameWrapper">
+          <div className="name">{song.name}</div>
+          <div className="about">
+            {song.artists.map((artist) => (
+              <span key={artist.name}>{artist.name} </span>
+            ))}
           </div>
+        </div>
+        <div className="endDetails">
+          <div className="timestamp">{msTominutes(song.duration_ms)}</div>
         </div>
       </div>
     </div>

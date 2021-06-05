@@ -3,20 +3,19 @@ import SpotifyPlayer from "react-spotify-web-playback";
 
 import { CurrentSongContext } from "../../context/CurrentSong";
 import { useSelector } from "react-redux";
+import { SongQueueContext } from "../../context/SongQ";
 
 const Audio = () => {
-  const { songState, playState } = React.useContext(CurrentSongContext);
-  const [song] = songState;
+  const { playState } = React.useContext(CurrentSongContext);
   const [play, setPlay] = playState;
+  const { songQueue } = React.useContext(SongQueueContext);
   const tokens = useSelector((state) => state.userCredentials);
 
-  // React.useEffect(() => {
-  //   song && (play ? audioRef.current.play() : audioRef.current.pause());
-  // }, [play]);
+  const [songQ] = songQueue;
 
   return (
     <div className="songPlayer">
-      {song && (
+      {songQ[0] && (
         <SpotifyPlayer
           styles={{
             height: "5rem",
@@ -32,7 +31,7 @@ const Audio = () => {
           play={play}
           callback={({ isPlaying }) => setPlay(isPlaying)}
           token={tokens.tokenAccess}
-          uris={song.uri}
+          uris={songQ[0].uri}
         />
       )}
     </div>
