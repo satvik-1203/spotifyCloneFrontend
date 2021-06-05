@@ -8,28 +8,48 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 2rem;
-
     height: 100%;
 
     .otherSongCard {
       transition: all 0.3s ease-out;
       cursor: pointer;
       display: flex;
+      align-items: center;
+
       width: 100%;
       background-color: #121212;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       border-radius: 0.3rem;
-      padding: 0.7rem;
+      padding: 0.4rem;
 
       .imageContainer {
         display: flex;
         position: relative;
         width: 100%;
 
-        img {
-          width: 2.5rem;
+        .imgContainer {
+          position: relative;
+          img {
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: cover;
+          }
+        }
+        .state {
+          width: 2, 5rem;
           height: 2.5rem;
-          object-fit: cover;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          svg {
+            height: 1.5rem;
+            width: 1.5rem;
+          }
         }
 
         .nameWrapper {
@@ -50,6 +70,8 @@
 
         .timestamp {
           position: absolute;
+          bottom: 50%;
+          transform: translateY(50%);
           right: 0px;
         }
       }

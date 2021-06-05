@@ -36,7 +36,7 @@ const PlayButton = ({ topSong }) => {
         className="buttonContainer"
       >
         <div className="play">
-          {play && song.id == topSong.id
+          {play && song.id === topSong.id
             ? play
               ? resume()
               : pause()

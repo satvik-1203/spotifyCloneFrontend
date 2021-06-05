@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import PlayButton from "./PlayButton";
 
-import { AnimatePresence } from "framer-motion";
-
 const TopSong = ({ topSong }) => {
   const [hover, setHover] = useState(false);
 
