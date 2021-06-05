@@ -14,6 +14,10 @@ const code = new URLSearchParams(window.location.search).get("code");
 const Login = () => {
   const dispatch = useDispatch();
 
+  const addToDate = (date, minutes) => {
+    return new Date(date.getTime() + minutes * 60000);
+  };
+
   useEffect(() => {
     if (!code) return;
     axios
@@ -30,6 +34,14 @@ const Login = () => {
         axios.get(userInfoUrl).then(({ data }) => {
           dispatch(userInfo(data));
         });
+
+        // cookie stuff
+        const cookie = `name=${data.data.tokenAccess}; expires=${addToDate(
+          new Date(),
+          60
+        ).toUTCString()};`;
+
+        document.cookie = cookie;
       })
       .catch(() => {
         window.location = "/";
