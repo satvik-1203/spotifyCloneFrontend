@@ -11,7 +11,7 @@ const SongQ = ({ children }) => {
 
   React.useEffect(() => {
     setSongQueue([currentSong, ...songQueue]);
-  }, [currentSong, songQueue]);
+  }, [currentSong]);
 
   return (
     <SongQueueContext.Provider value={{ songQueue: [songQueue, setSongQueue] }}>
