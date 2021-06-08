@@ -27,7 +27,7 @@ const Login = () => {
         window.history.pushState({}, "", ["/"]);
         // this get req for getting the data of the user, and will be storing in state
 
-        axios.get(userInfoUrl).then(({ data }) => {
+        axios.get(userInfoUrl(data.data.tokenAccess)).then(({ data }) => {
           dispatch(userInfo(data));
         });
       })
