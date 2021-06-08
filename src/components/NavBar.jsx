@@ -3,8 +3,6 @@ import React from "react";
 //misc
 import navBar from "../misc/navBar";
 
-import { Link } from "react-router-dom";
-
 import Login from "./Login";
 // code ...
 

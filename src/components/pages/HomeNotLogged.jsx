@@ -5,10 +5,10 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import userInfo from "../../redux/action/userInfo";
+import userCredentials from "../../redux/action/userCredentials";
 
 const HomeNotLogged = () => {
   const dispatch = useDispatch();
-
   const getCookie = (name) => {
     const validCookie = Cookies.get(name);
     if (validCookie) {
@@ -18,10 +18,25 @@ const HomeNotLogged = () => {
     }
   };
 
+  const addToDate = (date, minutes) => {
+    return new Date(date.getTime() + minutes * 60000);
+  };
+
   const validateAuth = () => {
-    if (getCookie("name")) {
-      axios.get(userInfoUrl).then(({ data }) => {
+    const data = getCookie("name");
+    if (data) {
+      axios.get(userInfoUrl(data)).then(({ data }) => {
         dispatch(userInfo(data));
+      });
+
+      axios.get(loginWithToken(data)).then(({ data }) => {
+        dispatch(userCredentials({ tokenAccess: data.accessToken }));
+        const cookie = `name=${data.accessToken}; expires=${addToDate(
+          new Date(),
+          60
+        ).toUTCString()};`;
+
+        document.cookie = cookie;
       });
     }
   };
