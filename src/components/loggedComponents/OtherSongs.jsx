@@ -10,7 +10,7 @@ const OtherSongs = ({ songs }) => {
         <div className="otherSongsTitle">Songs</div>
         <div className="otherSongsWrapper">
           {songs.map((song) => (
-            <OtherSongsWrapper song={song} />
+            <OtherSongsWrapper key={song.id} song={song} />
           ))}
         </div>
       </div>
