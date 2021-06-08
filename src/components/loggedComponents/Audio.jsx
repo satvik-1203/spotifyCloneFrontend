@@ -10,7 +10,6 @@ const Audio = () => {
   const [play, setPlay] = playState;
   const { songQueue } = React.useContext(SongQueueContext);
   const tokens = useSelector((state) => state.userCredentials);
-
   const [songQ] = songQueue;
 
   return (

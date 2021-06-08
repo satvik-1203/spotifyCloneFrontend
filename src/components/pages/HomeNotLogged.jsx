@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../NavBar";
+import { loginWithToken, userInfoUrl } from "../../BaseUrl";
+import Cookies from "js-cookie";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import userInfo from "../../redux/action/userInfo";
 
 const HomeNotLogged = () => {
+  const dispatch = useDispatch();
+
+  const getCookie = (name) => {
+    const validCookie = Cookies.get(name);
+    if (validCookie) {
+      return validCookie;
+    } else {
+      return null;
+    }
+  };
+
+  const validateAuth = () => {
+    if (getCookie("name")) {
+      axios.get(userInfoUrl).then(({ data }) => {
+        dispatch(userInfo(data));
+      });
+    }
+  };
+
+  useEffect(() => {
+    validateAuth();
+  }, []);
+
   return (
     <>
       <NavBar />
