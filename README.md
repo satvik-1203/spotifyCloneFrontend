@@ -13,6 +13,8 @@ https://user-images.githubusercontent.com/77904774/121616987-02423100-ca32-11eb-
 
 > Tried using cookie storage for the first time.
 
+> *** Please note that this clone does not inculde all the features and to play songs you need to be a premium account holder***
+
 
 #### contributors 
 
