@@ -9,7 +9,7 @@ https://user-images.githubusercontent.com/77904774/121616987-02423100-ca32-11eb-
 
 > A clone of spotify using React.js, Node.js, Express.js, Mongodb, Spotify api and sdk.
  
-> Used Redux, Context api as global state manager.
+> Used Redux and Context api as global state manager.
 
 > Tried using cookie storage for the first time.
 
