@@ -38,6 +38,7 @@ const HomeNotLogged = () => {
 
         document.cookie = cookie;
       });
+    } else {
     }
   };
 
